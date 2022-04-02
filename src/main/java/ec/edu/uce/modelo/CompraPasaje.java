@@ -1,5 +1,6 @@
 package ec.edu.uce.modelo;
 
+import java.security.Timestamp;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -12,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="compra_pasaje")
 public class CompraPasaje {
@@ -23,7 +26,8 @@ public class CompraPasaje {
 	private Integer id;
 	@Column(name="copa_numero_compra")
 	private String numeroCompra;
-	@Column(name="copa_fecha_compra")
+	@Column(name="copa_fecha_compra", columnDefinition = "TIMESTAMP")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime fechaCompra;
 	@Column(name="copa_numero_tarjeta")
 	private String numeroTarjeta;

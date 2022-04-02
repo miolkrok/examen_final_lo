@@ -40,4 +40,12 @@ public class VueloRepositoryImpl implements IVueloRepo{
 		this.entityManager.remove(vue);
 	}
 
+	@Override
+	public Vuelo buscarVueloPorEstado(String estado) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 }

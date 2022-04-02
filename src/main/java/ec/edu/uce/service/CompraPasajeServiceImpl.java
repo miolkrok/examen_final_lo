@@ -35,4 +35,10 @@ public class CompraPasajeServiceImpl implements ICompraPasajeService{
 		this.compraPasajeRepo.borrarCompraPasajePorId(id);
 	}
 
+	@Override
+	public CompraPasaje buscarCompraPasajePorNumero(String numeroCompra) {
+		// TODO Auto-generated method stub
+		return this.compraPasajeRepo.buscarCompraPasajePorNumero(numeroCompra);
+	}
+
 }

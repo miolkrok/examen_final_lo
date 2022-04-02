@@ -8,5 +8,6 @@ public interface IVueloRepo {
 	void actualizarVuelo(Vuelo vuelo);
 	Vuelo buscarVueloPorId(Integer id);
 	void borrarVueloPorId(Integer id);
+	Vuelo buscarVueloPorEstado(String estado);
 
 }

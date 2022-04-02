@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -38,6 +39,14 @@ public class CompraPasajeRepositoryImpl implements ICompraPasajeRepo{
 		// TODO Auto-generated method stub
 		CompraPasaje compa = this.buscarCompraPasajePorId(id);
 		this.entityManager.remove(compa);
+	}
+
+	@Override
+	public CompraPasaje buscarCompraPasajePorNumero(String numeroCompra) {
+		// TODO Auto-generated method stub
+		TypedQuery<CompraPasaje> myQuery = this.entityManager.createQuery("select c from CompraPasaje c where c.numeroCompra=: valor",CompraPasaje.class);
+		myQuery.setParameter("valor", numeroCompra);
+		return myQuery.getSingleResult();
 	}
 
 }

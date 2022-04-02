@@ -8,5 +8,6 @@ public interface ICompraPasajeService {
 	void actualizarCompraPasaje(CompraPasaje compraPasaje);
 	CompraPasaje buscarCompraPasajePorId(Integer id);
 	void borrarCompraPasajePorId(Integer id);
+	CompraPasaje buscarCompraPasajePorNumero(String numeroCompra);
 
 }

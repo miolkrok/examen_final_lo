@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="vuelo")
 public class Vuelo {
@@ -29,7 +31,8 @@ public class Vuelo {
 	@Column(name="vuel_numero_vuelo")
 	private String numeroVuelo;
 	
-	@Column(name="vuel_fecha_vuelo")
+	@Column(name="vuel_fecha_vuelo", columnDefinition = "TIMESTAMP")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime fechaVuelo;
 
 	@Column(name="vuel_asientos_disponibles")
