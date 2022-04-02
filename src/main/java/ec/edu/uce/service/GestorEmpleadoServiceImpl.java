@@ -14,9 +14,9 @@ public class GestorEmpleadoServiceImpl implements IGestorEmpleadoService{
 	@Override
 	public void realizarCheckIn(String numeroCompra) {
 		// TODO Auto-generated method stub
-		CompraPasaje cop = new CompraPasaje();
-		this.compraService.buscarCompraPasajePorNumero(numeroCompra);
-		
+		CompraPasaje cop = this.compraService.buscarCompraPasajePorNumero(numeroCompra);
+		cop.setEstado("I");
+		this.compraService.actualizarCompraPasaje(cop);
 	}
 
 	
